@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Enemy : MonoBehaviour {
@@ -9,14 +10,23 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (pleaseEnter) {
             EnterScreen();
         }
-	}
+        transform.localScale = new Vector3(Mathf.PingPong(Time.time, 0.3f) + 1, Mathf.PingPong(Time.time, 0.3f) + 1, Mathf.PingPong(Time.time, 0.3f) + 1);
+    }
+
+    public void opacity(float alpha)
+    {
+        Color tmp = this.GetComponent<Image>().color;
+        tmp.a = alpha;
+        this.GetComponent<Image>().color = tmp;
+        Debug.Log("Opacity of sprite " + title + " to " + alpha);
+    }
 
     public void EnterScreen() {
         if (!hasStarted) {

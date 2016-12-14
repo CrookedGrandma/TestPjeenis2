@@ -19,7 +19,7 @@ public class EnemyChooser : MonoBehaviour {
         enemyFound = false;
         enemyEntered = false;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 	    if (enemyC != "") {
@@ -28,10 +28,12 @@ public class EnemyChooser : MonoBehaviour {
         if (!enemyChosen) {
             Enemy[] currentEnemies = Object.FindObjectsOfType<Enemy>();
             foreach (Enemy e in currentEnemies) {
+                e.opacity(0f);
                 if (e.title == enemyC) {
                     currentEnemy = e;
                     enemyFound = true;
                     announce.text = "You're up against: " + currentEnemy.title;
+                    e.opacity(1f);
                 }
             }
             if (!enemyFound) {
@@ -41,6 +43,7 @@ public class EnemyChooser : MonoBehaviour {
                 currentEnemy.pleaseEnter = true;
                 enemyEntered = true;
             }
+            enemyChosen = true;
         }
 	}
 }
