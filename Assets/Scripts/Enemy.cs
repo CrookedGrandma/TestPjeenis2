@@ -29,14 +29,4 @@ public class Enemy {
     public Enemy() {
         this.ID = -1;
     }
-
-    // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
