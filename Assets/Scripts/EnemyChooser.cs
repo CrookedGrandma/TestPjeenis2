@@ -7,11 +7,11 @@ using System.IO;
 
 public class EnemyChooser : MonoBehaviour {
 
-    public List<Enemy> EnemyDatabase = new List<Enemy>();
-    public JsonData EnemyStats;
+    List<Enemy> EnemyDatabase = new List<Enemy>();
+    JsonData EnemyStats;
 
     EnemySprite currentEnemy;
-    int enemyC = -1;
+    string enemyC = "";
     bool enemyChosen;
     bool enemyFound;
     bool enemyEntered;
@@ -33,17 +33,17 @@ public class EnemyChooser : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	    if (enemyC != -1) {
+	    if (enemyC != "") {
             print("In combat: " + enemyC);
         }
         if (!enemyChosen) {
             EnemySprite[] currentEnemies = Object.FindObjectsOfType<EnemySprite>();
             foreach (EnemySprite e in currentEnemies) {
                 e.opacity(0f);
-                if (e.ID == enemyC) {
+                if (e.title == enemyC) {
                     currentEnemy = e;
                     enemyFound = true;
-                    announce.text = "You're up against: " + currentEnemy.linkedEnemy.Title;
+                    announce.text = "You're up against: " + currentEnemy.title;
                     e.opacity(1f);
                 }
             }

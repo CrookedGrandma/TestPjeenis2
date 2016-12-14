@@ -4,9 +4,9 @@ using System.Collections;
 public class ThirdPersonController : MonoBehaviour {
 
     public static ThirdPersonController player;
-    int enemy = -1;
+    string enemy = "";
 
-    public int Enemy {
+    public string Enemy {
         get { return enemy; }
         set { enemy = value; }
     }
@@ -22,7 +22,7 @@ public class ThirdPersonController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (enemy != -1) {
+        if (enemy != "") {
             print(enemy);
         }
         if (Input.GetKeyDown(KeyCode.C)) {

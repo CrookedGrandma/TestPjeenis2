@@ -3,10 +3,10 @@ using System.Collections;
 
 public class PressurePlate : MonoBehaviour {
 
-    public int FightAgainst = -1;
+    public string FightAgainst = "";
 
 	void OnCollisionEnter() {
-        if (FightAgainst != -1) {
+        if (FightAgainst != "") {
             ThirdPersonController.player.Enemy = FightAgainst;
         }
     }

@@ -4,16 +4,12 @@ using System.Collections;
 
 public class EnemySprite : MonoBehaviour {
 
-    public int ID = -1;
+    public string title = "";
     public bool pleaseEnter = false;
     bool hasStarted = false;
-
-    public EnemyChooser enemyChooser;
-    public Enemy linkedEnemy = null;
     
 	// Use this for initialization
 	void Start() {
-        linkedEnemy = enemyChooser.EnemyDatabase[ID];
     }
 	
 	// Update is called once per frame
@@ -28,7 +24,7 @@ public class EnemySprite : MonoBehaviour {
         Color tmp = this.GetComponent<Image>().color;
         tmp.a = alpha;
         this.GetComponent<Image>().color = tmp;
-        Debug.Log("Opacity of sprite " + ID + " to " + alpha);
+        Debug.Log("Opacity of sprite " + title + " to " + alpha);
     }
 
     public void EnterScreen() {
