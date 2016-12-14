@@ -22,11 +22,12 @@ public class EnemyChooser : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        enemyC = ThirdPersonController.player.Enemy;
+        if (ThirdPersonController.player != null) {
+            enemyC = ThirdPersonController.player.Enemy;
+        }
         enemyChosen = false;
         enemyFound = false;
         enemyEntered = false;
-        enemyLoaded = false;
 
         EnemyStats = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/StreamingAssets/Enemies.json"));
         ConstructEnemyDatabase();
@@ -45,8 +46,10 @@ public class EnemyChooser : MonoBehaviour {
                     currentEnemy = e;
                     enemyFound = true;
                     announce.text = "You're up against: " + currentEnemy.linkedEnemy.Title;
-                    enemyStat.text = "Attack 1: " + currentEnemy.linkedEnemy.Attack1Title + "\n" + "Damage: " + currentEnemy.linkedEnemy.Attack1Damage + "\n" +
-                                     "Attack 2: " + currentEnemy.linkedEnemy.Attack2Title + "\n" + "Damage: " + currentEnemy.linkedEnemy.Attack2Damage;
+                    enemyStat.text = "Attack 1: " + currentEnemy.linkedEnemy.Attack1Title + "\n" +
+                                     "Damage: " + currentEnemy.linkedEnemy.Attack1Damage + "\n" +
+                                     "Attack 2: " + currentEnemy.linkedEnemy.Attack2Title + "\n" +
+                                     "Damage: " + currentEnemy.linkedEnemy.Attack2Damage;
                     e.opacity(1f);
                 }
             }
@@ -57,12 +60,13 @@ public class EnemyChooser : MonoBehaviour {
                 currentEnemy.pleaseEnter = true;
                 enemyEntered = true;
             }
-            if (!enemyLoaded) {
-
-            }
             enemyChosen = true;
         }
-	}
+
+        if (Input.GetKeyDown(KeyCode.C)) {
+            Application.LoadLevel("Main");
+        }
+    }
 
     private void ConstructEnemyDatabase() {
         for (int i = 0; i < EnemyStats.Count; i++) {

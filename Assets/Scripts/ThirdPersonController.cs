@@ -4,11 +4,11 @@ using System.Collections;
 public class ThirdPersonController : MonoBehaviour {
 
     public static ThirdPersonController player;
-    int enemy = -1;
+    int enemyID = -1;
 
     public int Enemy {
-        get { return enemy; }
-        set { enemy = value; }
+        get { return enemyID; }
+        set { enemyID = value; }
     }
 
     // Use this for initialization
@@ -22,8 +22,8 @@ public class ThirdPersonController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (enemy != -1) {
-            print(enemy);
+        if (enemyID != -1) {
+            print(enemyID);
         }
         if (Input.GetKeyDown(KeyCode.C)) {
             Application.LoadLevel("Combat");

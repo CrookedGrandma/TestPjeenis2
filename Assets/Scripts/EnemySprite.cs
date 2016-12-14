@@ -27,7 +27,7 @@ public class EnemySprite : MonoBehaviour {
         Color tmp = this.GetComponent<Image>().color;
         tmp.a = alpha;
         this.GetComponent<Image>().color = tmp;
-        Debug.Log("Opacity of sprite " + ID + " to " + alpha);
+        print("Opacity of sprite " + linkedEnemy.Title + ", ID " + ID + ", to " + alpha*100 + "%");
     }
 
     public void EnterScreen() {
