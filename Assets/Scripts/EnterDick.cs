@@ -7,16 +7,13 @@ public class EnterDick : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        this.GetComponent<Rigidbody2D>().velocity = new Vector2(200f, 0f);
+        this.GetComponent<Rigidbody2D>().velocity = new Vector2(750f, 0f);
 	}
 
     // Update is called once per frame
     void Update() {
         if (!hasMoved) {
-            if (this.transform.position.x / Screen.width * 16 < 1.7429193899782135076252723311547f) {
-                this.GetComponent<Rigidbody2D>().velocity = new Vector2(this.GetComponent<Rigidbody2D>().velocity.x + 10f, 0f);
-            }
-            else {
+            if (this.transform.position.x / Screen.width * 16 >= 1.7429193899782135076252723311547f) {
                 this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 hasMoved = true;
             }
