@@ -7,6 +7,7 @@ public class ThirdPersonController : MonoBehaviour {
     public static ThirdPersonController player;
     int enemyID = -1;
     int envID = -1;
+    bool pleaseDie = false;
 
     public int Enemy {
         get { return enemyID; }
@@ -18,12 +19,18 @@ public class ThirdPersonController : MonoBehaviour {
         set { envID = value; }
     }
 
+    public bool PleaseDie {
+        get { return pleaseDie; }
+        set { pleaseDie = value; }
+    }
+
     // Use this for initialization
     void Awake () {
         if (player != null) {
             Destroy(gameObject);
         }else {
             player = this;
+            GameObject.DontDestroyOnLoad(gameObject);
         }
 	}
 	
@@ -37,6 +44,9 @@ public class ThirdPersonController : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.C)) {
             SceneManager.LoadScene("Combat");
+        }
+        if (pleaseDie) {
+            Destroy(gameObject);
         }
 	}
 }

@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Environment : MonoBehaviour
 {
+
+    public Camera MainCamera;
+
     public Color Desert = Color.white;
     public Color Sea = Color.white;
     public Color Forest = Color.white;
@@ -12,10 +15,10 @@ public class Environment : MonoBehaviour
     {
         switch (bgcolor)
         {
-            case 0: GetComponent<Camera>().backgroundColor = Desert; break;
-            case 1: GetComponent<Camera>().backgroundColor = Sea; break;
-            case 2: GetComponent<Camera>().backgroundColor = Forest; break;
-            default: GetComponent<Camera>().backgroundColor = Color.black; break;
+            case 0: MainCamera.backgroundColor = Desert; break;
+            case 1: MainCamera.backgroundColor = Sea; break;
+            case 2: MainCamera.backgroundColor = Forest; break;
+            default: MainCamera.backgroundColor = Color.black; break;
         }
     }
 }
