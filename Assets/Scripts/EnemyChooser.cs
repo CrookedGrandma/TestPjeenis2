@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using LitJson;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,10 +13,12 @@ public class EnemyChooser : MonoBehaviour {
 
     EnemySprite currentEnemy;
     int enemyC = -1;
+    int enviC = -1;
     bool enemyChosen;
     bool enemyFound;
     bool enemyEntered;
     bool enemyLoaded;
+    bool enviSet;
 
     public Text announce;
     public Text enemyStat;
@@ -24,7 +27,9 @@ public class EnemyChooser : MonoBehaviour {
 	void Start () {
         if (ThirdPersonController.player != null) {
             enemyC = ThirdPersonController.player.Enemy;
+            enviC = ThirdPersonController.player.Envi;
         }
+        enviSet = false;
         enemyChosen = false;
         enemyFound = false;
         enemyEntered = false;
@@ -36,7 +41,10 @@ public class EnemyChooser : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	    if (enemyC != -1) {
-            print("In combat: " + enemyC);
+            Debug.Log("In combat: " + enemyC);
+        }
+        if (enviC != -1) {
+            Debug.Log("In environment: " + enviC);
         }
         if (!enemyChosen) {
             EnemySprite[] currentEnemies = Object.FindObjectsOfType<EnemySprite>();
@@ -63,8 +71,13 @@ public class EnemyChooser : MonoBehaviour {
             enemyChosen = true;
         }
 
+        if (!enviSet) {
+            GetComponent<Environment>().changebg(enviC);
+            enviSet = true;
+        }
+
         if (Input.GetKeyDown(KeyCode.C)) {
-            Application.LoadLevel("Main");
+            SceneManager.LoadScene("Main");
         }
     }
 
