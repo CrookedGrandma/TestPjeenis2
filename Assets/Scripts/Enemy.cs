@@ -14,6 +14,9 @@ public class Enemy {
     public double Attack2Scaling { get; set; }
 
     //Constructor for 2-attack enemy
+    /// <summary>
+    /// Load an enemy with two attacks
+    /// </summary>
     public Enemy(int id, string title, string type, string attack1title, int attack1damage, double attack1scaling, string attack2title, int attack2damage, double attack2scaling) {
         this.ID = id;
         this.Title = title;
@@ -26,6 +29,9 @@ public class Enemy {
         this.Attack2Scaling = attack2scaling;
     }
     //Constructor for nothing
+    /// <summary>
+    /// Load a completely empty enemy
+    /// </summary>
     public Enemy() {
         this.ID = -1;
     }

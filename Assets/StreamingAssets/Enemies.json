@@ -1,7 +1,7 @@
 [
 	{
 		"id": 0,
-		"title": "enemy1",
+		"title": "CloystRenzo",
 		"type": "2attack",
 		"attack1title": "Flap",
 		"attack1damage": 10,
@@ -12,7 +12,7 @@
 	},
 	{
 		"id": 1,
-		"title": "enemy2",
+		"title": "DugtRenzo",
 		"type": "2attack",
 		"attack1title": "Poke",
 		"attack1damage": 10,

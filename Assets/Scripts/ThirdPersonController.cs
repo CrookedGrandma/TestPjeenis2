@@ -42,9 +42,6 @@ public class ThirdPersonController : MonoBehaviour {
         if (envID != -1) {
             Debug.Log("Environment Plate: " + envID);
         }
-        if (Input.GetKeyDown(KeyCode.C)) {
-            SceneManager.LoadScene("Combat");
-        }
         if (pleaseDie) {
             Destroy(gameObject);
         }
