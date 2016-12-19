@@ -31,33 +31,25 @@ public class StateHandler : MonoBehaviour {
 
         if (ranOnce) {
             int attackNum = GetAttack();
-            if (attackNum == 1) {
-                if (flashTimer >= 0.9) {
+            if (flashTimer >= 0.9) {
+                if (attackNum == 1) {
                     enemyChooser.enemyStat.text = "<color=red>Attack 1: " + e.Attack1Title + "\n" +
                                                   "Damage: " + e.Attack1Damage + "</color>\n" +
                                                   "Attack 2: " + e.Attack2Title + "\n" +
                                                   "Damage: " + e.Attack2Damage;
                 }
-                if (flashTimer <= 0.1) {
-                    enemyChooser.enemyStat.text = "Attack 1: " + e.Attack1Title + "\n" +
-                                                  "Damage: " + e.Attack1Damage + "\n" +
-                                                  "Attack 2: " + e.Attack2Title + "\n" +
-                                                  "Damage: " + e.Attack2Damage;
-                }
-            }
-            if (attackNum == 2) {
-                if (flashTimer >= 0.9) {
+                if (attackNum == 2) {
                     enemyChooser.enemyStat.text = "Attack 1: " + e.Attack1Title + "\n" +
                                                   "Damage: " + e.Attack1Damage + "\n" +
                                                   "<color=red>Attack 2: " + e.Attack2Title + "\n" +
                                                   "Damage: " + e.Attack2Damage + "</color>";
                 }
-                if (flashTimer <= 0.1) {
-                    enemyChooser.enemyStat.text = "Attack 1: " + e.Attack1Title + "\n" +
-                                                  "Damage: " + e.Attack1Damage + "\n" +
-                                                  "Attack 2: " + e.Attack2Title + "\n" +
-                                                  "Damage: " + e.Attack2Damage;
-                }
+            }
+            if (flashTimer <= 0.1) {
+                enemyChooser.enemyStat.text = "Attack 1: " + e.Attack1Title + "\n" +
+                                              "Damage: " + e.Attack1Damage + "\n" +
+                                              "Attack 2: " + e.Attack2Title + "\n" +
+                                              "Damage: " + e.Attack2Damage;
             }
         }
     }
