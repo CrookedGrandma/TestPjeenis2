@@ -57,7 +57,9 @@ public class EnemyChooser : MonoBehaviour {
                     currentEnemy = e;
                     enemyFound = true;
                     announce.text = "You're up against: " + currentEnemy.linkedEnemy.Title;
-                    enemyStat.text = "Attack 1: " + currentEnemy.linkedEnemy.Attack1Title + "\n" +
+                    enemyStat.text = "HP: " + currentEnemy.linkedEnemy.HP + "\n" +
+                                     "Strength: " + currentEnemy.linkedEnemy.Strength + "\n" +
+                                     "Attack 1: " + currentEnemy.linkedEnemy.Attack1Title + "\n" +
                                      "Damage: " + currentEnemy.linkedEnemy.Attack1Damage + "\n" +
                                      "Attack 2: " + currentEnemy.linkedEnemy.Attack2Title + "\n" +
                                      "Damage: " + currentEnemy.linkedEnemy.Attack2Damage;
@@ -87,7 +89,8 @@ public class EnemyChooser : MonoBehaviour {
     private void ConstructEnemyDatabase() {
         for (int i = 0; i < EnemyStats.Count; i++) {
             if (EnemyStats[i]["type"].ToString() == "2attack") {
-                EnemyDatabase.Add(new Enemy((int)EnemyStats[i]["id"], EnemyStats[i]["title"].ToString(), EnemyStats[i]["type"].ToString(), (int)EnemyStats[i]["hp"], (int)EnemyStats[i]["strength"],
+                EnemyDatabase.Add(new Enemy((int)EnemyStats[i]["id"], EnemyStats[i]["title"].ToString(),
+                    EnemyStats[i]["type"].ToString(), (int)EnemyStats[i]["hp"], (int)EnemyStats[i]["strength"],
                     EnemyStats[i]["attack1title"].ToString(), (int)EnemyStats[i]["attack1damage"],
                     (double)EnemyStats[i]["attack1scaling"], EnemyStats[i]["attack2title"].ToString(),
                     (int)EnemyStats[i]["attack2damage"], (double)EnemyStats[i]["attack2scaling"]));
