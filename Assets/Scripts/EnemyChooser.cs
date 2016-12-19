@@ -87,7 +87,7 @@ public class EnemyChooser : MonoBehaviour {
     private void ConstructEnemyDatabase() {
         for (int i = 0; i < EnemyStats.Count; i++) {
             if (EnemyStats[i]["type"].ToString() == "2attack") {
-                EnemyDatabase.Add(new Enemy((int)EnemyStats[i]["id"], EnemyStats[i]["title"].ToString(), EnemyStats[i]["type"].ToString(),
+                EnemyDatabase.Add(new Enemy((int)EnemyStats[i]["id"], EnemyStats[i]["title"].ToString(), EnemyStats[i]["type"].ToString(), (int)EnemyStats[i]["hp"], (int)EnemyStats[i]["strength"],
                     EnemyStats[i]["attack1title"].ToString(), (int)EnemyStats[i]["attack1damage"],
                     (double)EnemyStats[i]["attack1scaling"], EnemyStats[i]["attack2title"].ToString(),
                     (int)EnemyStats[i]["attack2damage"], (double)EnemyStats[i]["attack2scaling"]));
