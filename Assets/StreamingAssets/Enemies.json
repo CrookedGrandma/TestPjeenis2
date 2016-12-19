@@ -15,7 +15,7 @@
 		"title": "DugtRenzo",
 		"type": "2attack",
 		"attack1title": "Poke",
-		"attack1damage": 10,
+		"attack1damage": 20,
 		"attack1scaling": 0.2,
 		"attack2title": "Dig",
 		"attack2damage": 15,

@@ -11,7 +11,8 @@ public class EnemyChooser : MonoBehaviour {
     public List<Enemy> EnemyDatabase = new List<Enemy>();
     public JsonData EnemyStats;
 
-    EnemySprite currentEnemy;
+    public EnemySprite currentEnemy;
+
     int enemyC = -1;
     int enviC = -1;
     bool enemyChosen;

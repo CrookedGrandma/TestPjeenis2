@@ -12,6 +12,9 @@ public class Enemy {
     public string Attack2Title { get; set; }
     public int Attack2Damage { get; set; }
     public double Attack2Scaling { get; set; }
+    public string Attack3Title { get; set; }
+    public int Attack3Damage { get; set; }
+    public double Attack3Scaling { get; set; }
 
     //Constructor for 2-attack enemy
     /// <summary>
@@ -27,6 +30,9 @@ public class Enemy {
         this.Attack2Title = attack2title;
         this.Attack2Damage = attack2damage;
         this.Attack2Scaling = attack2scaling;
+        this.Attack3Title = null;
+        this.Attack3Damage = 0;
+        this.Attack3Scaling = 0;
     }
     //Constructor for nothing
     /// <summary>
