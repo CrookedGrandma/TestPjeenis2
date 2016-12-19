@@ -6,6 +6,8 @@ public class Enemy {
     public int ID { get; set; }
     public string Title { get; set; }
     public string Type { get; set; }
+    public int HP { get; set; }
+    public int Strength { get; set; }
     public string Attack1Title { get; set; }
     public int Attack1Damage { get; set; }
     public double Attack1Scaling { get; set; }
@@ -20,10 +22,12 @@ public class Enemy {
     /// <summary>
     /// Load an enemy with two attacks
     /// </summary>
-    public Enemy(int id, string title, string type, string attack1title, int attack1damage, double attack1scaling, string attack2title, int attack2damage, double attack2scaling) {
+    public Enemy(int id, string title, string type, int hp, int strength, string attack1title, int attack1damage, double attack1scaling, string attack2title, int attack2damage, double attack2scaling) {
         this.ID = id;
         this.Title = title;
         this.Type = type;
+        this.HP = hp;
+        this.Strength = strength;
         this.Attack1Title = attack1title;
         this.Attack1Damage = attack1damage;
         this.Attack1Scaling = attack1scaling;

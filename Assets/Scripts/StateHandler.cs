@@ -33,20 +33,26 @@ public class StateHandler : MonoBehaviour {
             int attackNum = GetAttack();
             if (flashTimer >= 0.9) {
                 if (attackNum == 1) {
-                    enemyChooser.enemyStat.text = "<color=red>Attack 1: " + e.Attack1Title + "\n" +
+                    enemyChooser.enemyStat.text = "HP: " + e.HP + "\n" +
+                                                  "Strength: " + e.Strength + "\n" +
+                                                  "<color=red>Attack 1: " + e.Attack1Title + "\n" +
                                                   "Damage: " + e.Attack1Damage + "</color>\n" +
                                                   "Attack 2: " + e.Attack2Title + "\n" +
                                                   "Damage: " + e.Attack2Damage;
                 }
                 if (attackNum == 2) {
-                    enemyChooser.enemyStat.text = "Attack 1: " + e.Attack1Title + "\n" +
+                    enemyChooser.enemyStat.text = "HP: " + e.HP + "\n" +
+                                                  "Strength: " + e.Strength + "\n" +
+                                                  "Attack 1: " + e.Attack1Title + "\n" +
                                                   "Damage: " + e.Attack1Damage + "\n" +
                                                   "<color=red>Attack 2: " + e.Attack2Title + "\n" +
                                                   "Damage: " + e.Attack2Damage + "</color>";
                 }
             }
             if (flashTimer <= 0.1) {
-                enemyChooser.enemyStat.text = "Attack 1: " + e.Attack1Title + "\n" +
+                enemyChooser.enemyStat.text = "HP: " + e.HP + "\n" +
+                                              "Strength: " + e.Strength + "\n" +
+                                              "Attack 1: " + e.Attack1Title + "\n" +
                                               "Damage: " + e.Attack1Damage + "\n" +
                                               "Attack 2: " + e.Attack2Title + "\n" +
                                               "Damage: " + e.Attack2Damage;
