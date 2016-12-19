@@ -54,6 +54,13 @@ public class StateHandler : MonoBehaviour {
         }
     }
 
+    void LateUpdate() {
+        if (!ranOnce) {
+            e = enemyChooser.currentEnemy.linkedEnemy;
+            ranOnce = true;
+        }
+    }
+
     int GetAttack() {
         int attackNum = 1;
         int attackDam = e.Attack1Damage;
@@ -61,12 +68,5 @@ public class StateHandler : MonoBehaviour {
         if (e.Attack3Damage > attackDam) { attackNum = 3; }
 
         return attackNum;
-    }
-
-    void LateUpdate() {
-        if (!ranOnce) {
-            e = enemyChooser.currentEnemy.linkedEnemy;
-            ranOnce = true;
-        }
     }
 }
