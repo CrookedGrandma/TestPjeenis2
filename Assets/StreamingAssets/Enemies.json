@@ -33,9 +33,9 @@
     "strength": 50,
 		"attack1title": "Look stoned",
 		"attack1damage": 5,
-		"attack1scaling": 0.2,
+		"attack1scaling": 0.69,
 		"attack2title": "Be a fat kutamsterdammer",
 		"attack2damage": 8,
-		"attack2scaling": 0.2
+		"attack2scaling": 0.69
 	}
 ]
